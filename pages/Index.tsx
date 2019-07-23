@@ -28,7 +28,6 @@ const Index = (props) => {
             <div style={{backgroundColor: "red", height: "1400px"}}>Hey</div>
 
             <BuyButton/>
-
         </div>
     )
 };
