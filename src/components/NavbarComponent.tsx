@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import CONSTANTS from "../constants/constants";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -25,7 +26,7 @@ const Navbar = () => {
     const classes = useStyles({});
     return(
            <div className={classes.root}>
-            <AppBar position="static" color="primary" style={{backgroundColor:'green'}}>
+            <AppBar position="static" color="primary" style={{backgroundColor:CONSTANTS.colorGreen}}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
