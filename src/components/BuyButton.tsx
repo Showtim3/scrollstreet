@@ -47,7 +47,7 @@ const BuyButton = () => {
         <div>
             <BuyButtonContainer>
                 <MoveAnimation>
-                <Button variant="contained" color="primary" className={classes.button}>Buy Now</Button>
+                    <Button variant="contained" color="primary" className={classes.button}>Buy Now</Button>
                 </MoveAnimation>
             </BuyButtonContainer>
         </div>

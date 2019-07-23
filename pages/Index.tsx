@@ -1,5 +1,5 @@
 import Navbar from "../src/components/NavbarComponent";
-import Product from "../src/components/ProductComponent"
+import Product from "../src/components/Product/ProductComponent"
 import BuyButton from "../src/components/BuyButton";
 import styled from 'styled-components';
 import Head from 'next/head'
@@ -27,7 +27,6 @@ const Index = (props) => {
             <Product />
             <div style={{backgroundColor: "red", height: "1400px"}}>Hey</div>
             <BuyButton/>
-
         </div>
     )
 };
