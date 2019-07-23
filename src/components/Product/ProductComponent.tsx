@@ -1,6 +1,17 @@
-import styled from 'styled-components'
-import * as React from "react";
-import Rating from '@material-ui/lab/Rating';
+import ProductDescription from "./ProductDescriptionText";
+import styled from 'styled-components';
+import * as faker from 'faker'
+import {Rating} from "@material-ui/lab";
+
+const product = () => {
+    function generateDummyData() {
+        let dataArr = [];
+        for (let i = 0; i <= 10; i++) {
+            dataArr.push(faker.lorem.sentence());
+        }
+        console.log(dataArr);
+        return dataArr;
+    }
 
 const ProductCarousel = styled.div`
             text-align:center;
@@ -37,9 +48,7 @@ const ProductName = styled.div`
                 }
                 
          `;
-
-const product = () => {
-    return (
+ return (
         <div>
             <Announcement> GET A FLAT 15% OFF WHEN YOU PAY ONLINE</Announcement>
             <ProductCarousel>
@@ -48,6 +57,7 @@ const product = () => {
             <ProductName><h2 >Rock L Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
             </ProductName>
             <Rating name="hover-tooltip" value={2} />
+            <ProductDescription data={generateDummyData()}/>
         </div>
     )
 };

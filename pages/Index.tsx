@@ -26,7 +26,6 @@ const Index = (props) => {
             <Navbar/>
             <Product/>
             <div style={{backgroundColor: "red", height: "1400px"}}>Hey</div>
-
             <BuyButton/>
         </div>
     )
