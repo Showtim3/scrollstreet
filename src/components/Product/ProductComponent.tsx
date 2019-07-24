@@ -7,6 +7,7 @@ import Review from "../ReviewComponent";
 import Question from "../QuestionsComponent";
 import {Box, Container, Typography, Grid, Paper} from "@material-ui/core";
 import * as React from "react";
+import Pricing from "./Pricing";
 
 const product = () => {
     function generateDummyData() {
@@ -52,10 +53,6 @@ const product = () => {
                 }  
          `;
 
-
-    const QuantitySelector = styled.div`
-    `;
-
     return (
         <div>
             <Announcement> GET A FLAT 15% OFF WHEN YOU PAY ONLINE</Announcement>
@@ -71,12 +68,13 @@ const product = () => {
                 </Box>
                 <Box display="flex" flexWrap="nowrap" mt={1} flexDirection="row">
                     <Box fontWeight="fontWeightBold" fontSize="h6.fontSize"
-                         mr={2} style={{textDecoration: "line-through"}}>Rs. 1,399.00</Box>
+                         mr={2} style={{textDecoration: "line-through"}}>Rs. 1,399.00
+                    </Box>
                     <Box fontWeight="fontWeightBold" fontSize="h6.fontSize" color={`${CONSTANTS.primaryGreen}`}>Rs.
-                        699.00</Box>
+                        699.00
+                    </Box>
                 </Box>
-                <QuantitySelector>
-                </QuantitySelector>
+                <Pricing/>
                 <ProductDescription data={generateDummyData()}/>
                 <Review/>
                 <Question/>
