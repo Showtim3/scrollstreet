@@ -2,6 +2,8 @@ import ProductDescription from "./ProductDescriptionText";
 import styled from 'styled-components';
 import * as faker from 'faker'
 import {Rating} from "@material-ui/lab";
+import Review from "../ReviewComponent";
+import Question from "../QuestionsComponent";
 
 const product = () => {
     function generateDummyData() {
@@ -58,6 +60,8 @@ const ProductName = styled.div`
             </ProductName>
             <Rating name="hover-tooltip" value={2} />
             <ProductDescription data={generateDummyData()}/>
+            <Review/>
+            <Question/>
         </div>
     )
 };

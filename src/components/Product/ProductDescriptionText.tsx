@@ -8,7 +8,7 @@ const ProductDescription = (props) => {
     display:inline-block;
     }
     li{
-    font-size:1.5rem;
+    font-size:1.2rem;
     text-align:left;
     padding:0.5rem 0;
     }
