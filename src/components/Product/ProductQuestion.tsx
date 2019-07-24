@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import {Container} from "@material-ui/core";
+import styled from "styled-components";
 
 const Heading = styled.div`
 padding-top:1rem;
@@ -29,7 +29,6 @@ font-weight:bold;
 }
 `;
 
-
 const Question = () => {
     return(
         <div>
@@ -41,7 +40,7 @@ const Question = () => {
             </QuestionBox>
             </Container>
         </div>
-    )
-}
+    );
+};
 
 export default Question;

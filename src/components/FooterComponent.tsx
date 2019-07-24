@@ -5,10 +5,12 @@ const FooterContainer = styled.div`
 background-color:#e6e6e6;
 display:flex;
 flex-wrap:wrap;
-justify-content:space-evenly;
+justify-content:center;
+text-align: center;
 `;
 const FooterList = styled.div`
-width:42%;
+width:100%;
+padding: 1.5rem 0 0;
 span{
 font-size:1.4rem
 }
@@ -16,7 +18,9 @@ ul{
 padding:0;
 list-style:none;}
 li{
-font-size:1rem;
+font-size:1.2rem;
+padding: 0.2rem;
+
 }`;
 const CopyrightContainer = styled.div`
 width:100%;

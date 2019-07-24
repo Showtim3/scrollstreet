@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import styled from "styled-components";
 
 const ProductDescription = (props) => {
     const ProductTextWrapper = styled.div`
@@ -14,18 +13,17 @@ const ProductDescription = (props) => {
     }
     `;
 
-
     console.log("props", props);
     return (
         <ProductTextWrapper>
             <div>
                 <ul>
                     {props.data.map((element, i) => {
-                        return <li key={i}>{element}</li>
+                        return <li key={i}>{element}</li>;
                     })}
                 </ul>
             </div>
         </ProductTextWrapper>
-    )
-}
+    );
+};
 export default ProductDescription;

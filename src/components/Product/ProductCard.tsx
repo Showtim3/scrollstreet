@@ -1,55 +1,46 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
 import {Box, Container, Typography} from "@material-ui/core";
 import {Rating} from "@material-ui/lab";
+import React from "react";
+import styled from "styled-components";
 import CONSTANTS from "../../constants/constants";
-import ProductDescription from "./ProductDescriptionText";
-import Review from "../ReviewComponent";
-import Question from "../QuestionsComponent";
-import * as faker from "faker";
 
 const ProductCard = () => {
-
-
-    function generateDummyData() {
-        let dataArr = [];
-        for (let i = 0; i <= 10; i++) {
-            dataArr.push(faker.lorem.sentence());
-        }
-        console.log(dataArr);
-        return dataArr;
-    }
-
+    const ProductWrapper = styled.div`
+    width: 40%;
+    display: inline-block;
+    padding: 2rem 4%;
+`;
     const ProductCarousel = styled.div`
                  text-align:center;
             background-color:white;
                         width:100%;
      `;
 
-
     const ProductName = styled.div`
        text-transform: uppercase;
                  text-align:left;
-                   margin:2rem 0 1rem;
+                   margin:0 0 1rem;
           box-sizing:content-box;
                     padding:5px ;
                      color:black;
-                font-size:1.2rem;
-            font-family: Poppins;
-             letter-spacing: 1px; 
+                font-size:1rem;
+            font-family: Poppins,sans-serif;
+             letter-spacing: 1px;
    border-bottom: 3px solid #000;
-   
+
                 h2{
+                font-size: 0.8rem;
                 margin-bottom:0;
-                }  
+                font-weight: normal;
+                }
          `;
 
     return (
-        <Container>
+        <ProductWrapper>
             <ProductCarousel>
                 <img width="100%" src="/static/images/product.webp" alt=""/>
             </ProductCarousel>
-            <ProductName><h2>Rock L Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
+            <ProductName><h2>Rock A Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
             </ProductName>
             <Box display="flex" flexWrap="nowrap" flexDirection="row" mt={0}>
                 <Rating name="size-small" size="small" value={2}/>
@@ -63,10 +54,7 @@ const ProductCard = () => {
                     699.00
                 </Box>
             </Box>
-            <ProductDescription data={generateDummyData()}/>
-            <Review/>
-            <Question/>
-        </Container>
+        </ProductWrapper>
     );
 };
 

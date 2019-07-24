@@ -1,21 +1,20 @@
-import ProductDescription from "./ProductDescriptionText";
-import styled from 'styled-components';
-import CONSTANTS from '../../constants/constants';
-import * as faker from 'faker'
+import {Box, Container, Grid, Paper, Typography} from "@material-ui/core";
 import {Rating} from "@material-ui/lab";
-import Review from "../ReviewComponent";
-import Question from "../QuestionsComponent";
-import {Box, Container, Typography, Grid, Paper} from "@material-ui/core";
+import * as faker from "faker";
 import * as React from "react";
+import styled from "styled-components";
+import CONSTANTS from "../../constants/constants";
+import Review from "../ReviewComponent";
 import Pricing from "./Pricing";
+import ProductDescription from "./ProductDescriptionText";
+import Question from "./ProductQuestion";
 
 const product = () => {
     function generateDummyData() {
-        let dataArr = [];
+        const dataArr = [];
         for (let i = 0; i <= 10; i++) {
             dataArr.push(faker.lorem.sentence());
         }
-        console.log(dataArr);
         return dataArr;
     }
 
@@ -33,8 +32,7 @@ const product = () => {
                  padding:.5rem 0;
                      color:white;
                 font-weight: 400;
-           letter-spacing: .2rem; 
-    `;
+           letter-spacing: .2rem;`;
 
     const ProductName = styled.div`
        text-transform: uppercase;
@@ -44,13 +42,13 @@ const product = () => {
                     padding:5px ;
                      color:black;
                 font-size:1.2rem;
-            font-family: Poppins;
-             letter-spacing: 1px; 
+            font-family: Poppins,sans-serif;
+             letter-spacing: 1px;
    border-bottom: 3px solid #000;
-   
+
                 h2{
                 margin-bottom:0;
-                }  
+                }
          `;
 
     return (
@@ -80,7 +78,7 @@ const product = () => {
                 <Question/>
             </Container>
         </div>
-    )
+    );
 };
 
 export default product;
