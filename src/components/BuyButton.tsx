@@ -29,7 +29,6 @@ const rotate = keyframes`
 const BuyButtonContainer = styled.div`
     text-align:center;
     position:fixed;
-    background-color:white;
     bottom:0;
     width:100%;
     `;
@@ -53,5 +52,4 @@ const BuyButton = () => {
         </div>
     )
 }
-
 export default BuyButton;
