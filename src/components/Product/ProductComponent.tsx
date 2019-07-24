@@ -59,15 +59,6 @@ const product = () => {
     return (
         <div>
             <Announcement> GET A FLAT 15% OFF WHEN YOU PAY ONLINE</Announcement>
-            <ProductCarousel>
-                <img width="90%" src="/static/images/product.webp" alt=""/>
-            </ProductCarousel>
-            <ProductName><h2 >Rock L Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
-            </ProductName>
-            <Rating name="hover-tooltip" value={2} />
-            <ProductDescription data={generateDummyData()}/>
-            <Review/>
-            <Question/>
             <Container>
                 <ProductCarousel>
                     <img width="100%" src="/static/images/product.webp" alt=""/>
@@ -84,10 +75,11 @@ const product = () => {
                     <Box fontWeight="fontWeightBold" fontSize="h6.fontSize" color={`${CONSTANTS.primaryGreen}`}>Rs.
                         699.00</Box>
                 </Box>
-
                 <QuantitySelector>
                 </QuantitySelector>
                 <ProductDescription data={generateDummyData()}/>
+                <Review/>
+                <Question/>
             </Container>
         </div>
     )
