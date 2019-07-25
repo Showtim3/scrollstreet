@@ -1,5 +1,6 @@
 import {Box, Container, Typography} from "@material-ui/core";
 import {Rating} from "@material-ui/lab";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import CONSTANTS from "../../constants/constants";
@@ -40,17 +41,17 @@ const ProductCard = () => {
             <ProductCarousel>
                 <img width="100%" src="/static/images/product.webp" alt=""/>
             </ProductCarousel>
-            <ProductName><h2>Rock A Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
+            <ProductName><h2>Rock D Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
             </ProductName>
             <Box display="flex" flexWrap="nowrap" flexDirection="row" mt={0}>
-                <Rating name="size-small" size="small" value={2}/>
+                <Rating name="size-small" size="small"  value={2}/>
                 <Typography component="legend" display="inline">10 reviews</Typography>
             </Box>
             <Box display="flex" flexWrap="nowrap" mt={1} flexDirection="row">
-                <Box fontWeight="fontWeightBold" fontSize="h6.fontSize"
+                <Box fontWeight="fontWeightBold" fontSize="1rem"
                      mr={2} style={{textDecoration: "line-through"}}>Rs. 1,399.00
                 </Box>
-                <Box fontWeight="fontWeightBold" fontSize="h6.fontSize" color={CONSTANTS.primaryGreen}>Rs.
+                <Box fontWeight="fontWeightBold" fontSize="1rem" color={CONSTANTS.primaryGreen}>Rs.
                     699.00
                 </Box>
             </Box>

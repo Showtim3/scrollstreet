@@ -14,7 +14,7 @@ const Index = () => {
                 <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet"/>
             </Head>
             <style jsx global>{`
-      body { 
+      body {
       margin:0;
       padding:0;
       font-size:10px;

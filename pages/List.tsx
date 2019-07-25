@@ -11,6 +11,11 @@ flex-wrap:wrap;
 justify-content: center;
 `;
 
+const Wrapper = styled.div`
+max-width: 600px;
+margin: 0 auto;
+`;
+
 const ListPage = () => {
     return (
         <div>
@@ -19,9 +24,10 @@ const ListPage = () => {
       margin:0;
       padding:0;
       font-size:10px;
-      font-family:Poppins;
+      font-family:Poppins,sans-serif;
       }
     `}</style>
+            <Wrapper>
             <Navbar/>
             <Products>
                 <ProductCard/>
@@ -35,6 +41,7 @@ const ListPage = () => {
             <Testimonial/>
             <Footer/>
             <BuyButton/>
+            </Wrapper>
         </div>
     );
 };

@@ -8,7 +8,8 @@ const Post = props => (
     </MyLayout>
 );
 
-Post.getInitialProps = async function(context) {
+// tslint:disable-next-line:only-arrow-functions
+Post.getInitialProps = async (context) =>  {
     const { id } = context.query;
     const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
     const show = await res.json();
@@ -17,7 +18,5 @@ Post.getInitialProps = async function(context) {
 
     return { show };
 };
-
-
 
 export default Post;
