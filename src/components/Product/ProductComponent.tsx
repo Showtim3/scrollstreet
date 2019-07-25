@@ -1,4 +1,4 @@
-import {Box, Container, Grid, Paper, Typography} from "@material-ui/core";
+import {Box, Container, Typography} from "@material-ui/core";
 import {Rating} from "@material-ui/lab";
 import * as faker from "faker";
 import * as React from "react";
@@ -7,7 +7,7 @@ import CONSTANTS from "../../constants/constants";
 import Review from "../ReviewComponent";
 import Pricing from "./Pricing";
 import ProductDescription from "./ProductDescriptionText";
-import Question from "./ProductQuestion";
+import ProductQuestions from '../../components/ProductQuestions'
 
 const product = () => {
     function generateDummyData() {
@@ -53,6 +53,10 @@ const product = () => {
 
     return (
         <div>
+
+            <ProductQuestions/>
+
+
             <Announcement> GET A FLAT 15% OFF WHEN YOU PAY ONLINE</Announcement>
             <Container>
                 <ProductCarousel>
@@ -75,7 +79,6 @@ const product = () => {
                 <Pricing/>
                 <ProductDescription data={generateDummyData()}/>
                 <Review/>
-                <Question/>
             </Container>
         </div>
     );
