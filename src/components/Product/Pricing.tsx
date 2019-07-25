@@ -39,16 +39,15 @@ export default function Pricing() {
                 </div>
 
                 <div className="specialOffer">
-                     <Select
+                    <Select
                         native
                         value={"state.age"}
                         // onChange={handleChange('age')}
                         inputProps={{
                             name: 'age',
                             id: 'age-native-simple',
-                        }}
-                    >
-                        <option value="" />
+                        }}>
+                        <option value=""/>
                         <option value={10}>Ten</option>
                         <option value={20}>Twenty</option>
                         <option value={30}>Thirty</option>

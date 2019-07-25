@@ -8,6 +8,7 @@ import Review from "../ReviewComponent";
 import Pricing from "./Pricing";
 import ProductDescription from "./ProductDescriptionText";
 import ProductQuestions from '../../components/ProductQuestions'
+import Carousel from "../Carousel";
 
 const product = () => {
     function generateDummyData() {
@@ -18,11 +19,6 @@ const product = () => {
         return dataArr;
     }
 
-    const ProductCarousel = styled.div`
-                 text-align:center;
-            background-color:white;
-                        width:100%;
-     `;
 
     const Announcement = styled.div`
         background-color:#08aa00;
@@ -33,42 +29,31 @@ const product = () => {
                      color:white;
                 font-weight: 400;
            letter-spacing: .2rem;`;
-
+    //
     const ProductName = styled.div`
-       text-transform: uppercase;
-                 text-align:left;
-                   margin:2rem 0 1rem;
-          box-sizing:content-box;
-                    padding:5px ;
-                     color:black;
-                font-size:1.2rem;
-            font-family: Poppins,sans-serif;
-             letter-spacing: 1px;
-   border-bottom: 3px solid #000;
+        text-transform: uppercase;
+                  text-align:left;
+                      padding:5px ;
+                      color:black;
+                 font-size:1.5rem;
+               letter-spacing: 1px;
+    border-bottom: 3px solid #000;
+    margin-bottom: .5rem;
 
-                h2{
-                margin-bottom:0;
-                }
-         `;
+          `;
 
+    // @ts-ignore
     return (
         <div>
-
-            <ProductQuestions/>
-
-
             <Announcement> GET A FLAT 15% OFF WHEN YOU PAY ONLINE</Announcement>
             <Container>
-                <ProductCarousel>
-                    <img width="100%" src="/static/images/product.webp" alt=""/>
-                </ProductCarousel>
-                <ProductName><h2>Rock L Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
-                </ProductName>
+                <Carousel/>
+                <ProductName>Rock L Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</ProductName>
                 <Box display="flex" flexWrap="nowrap" flexDirection="row" mt={0}>
                     <Rating name="size-small" size="small" value={2}/>
                     <Typography component="legend" display="inline">10 reviews</Typography>
                 </Box>
-                <Box display="flex" flexWrap="nowrap" mt={1} flexDirection="row">
+                <Box display="flex" flexWrap="nowrap" flexDirection="row">
                     <Box fontWeight="fontWeightBold" fontSize="h6.fontSize"
                          mr={2} style={{textDecoration: "line-through"}}>Rs. 1,399.00
                     </Box>
@@ -80,6 +65,7 @@ const product = () => {
                 <ProductDescription data={generateDummyData()}/>
                 <Review/>
             </Container>
+            <ProductQuestions/>
         </div>
     );
 };
