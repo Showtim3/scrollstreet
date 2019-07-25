@@ -79,12 +79,10 @@ class ProductQuestions extends React.Component <any, IProductQuestionsState> {
     public render(): React.ReactNode {
         return (
             <div>
-                <Container>
-                    <Box component='h1'>Answer a few questions</Box>
-                    {this.state.questionArray.map(question => {
-                        return this.questionComponent(question)
-                    })}
-                </Container>
+                <Box component='h1'>Answer a few questions</Box>
+                {this.state.questionArray.map(question => {
+                    return this.questionComponent(question)
+                })}
             </div>
         );
     }

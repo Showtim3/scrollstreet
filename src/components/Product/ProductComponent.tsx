@@ -61,11 +61,12 @@ const product = () => {
                         699.00
                     </Box>
                 </Box>
+                <ProductQuestions/>
+
                 <Pricing/>
                 <ProductDescription data={generateDummyData()}/>
                 <Review/>
             </Container>
-            <ProductQuestions/>
         </div>
     );
 };
