@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from "react";
 import BuyButton from "../src/components/BuyButton";
 import Footer from "../src/components/Footer/FooterComponent";
 import Navbar from "../src/components/NavbarComponent";
