@@ -10,6 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import * as React from "react";
 import styled from "styled-components";
+import Link from "next/link";
+import ReactPath from "../../ReactPath";
 
 const styles = (theme: Theme) =>
     createStyles({
@@ -65,6 +67,7 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 text-align: center;
+margin-top: 1rem;
 `;
 const FooterList = styled.div`
 width:100%;
@@ -106,19 +109,18 @@ class Footer extends React.Component {
     public render() {
         return (
             <div>
-                <Container>
                     <FooterContainer>
                         <FooterList>
                             <ul>
-                                <li>Home</li>
-                                <li>Products</li>
+                                <Link href={ReactPath.HOME_PAGE}><li>Home</li></Link>
+                                <Link href={ReactPath.LIST_ITEM}><li>Products</li></Link>
                                 <li onClick={this.handleClickOpen}>Contact Us</li>
                             </ul>
                         </FooterList>
                         <FooterList>
                             <ul>
-                                <li>Privacy Policy</li>
-                                <li>Terms of Service</li>
+                                <Link href={ReactPath.PRIVACY_POLICY}><li>Privacy Policy</li></Link>
+                                <Link href={ReactPath.RETURN_POLICY}><li>Return Policy</li></Link>
                             </ul>
                         </FooterList>
                         <CopyrightContainer>
@@ -146,7 +148,6 @@ class Footer extends React.Component {
                         </Dialog>
 
                     </FooterContainer>
-                </Container>
             </div>
     );
     }

@@ -1,12 +1,26 @@
 import {Container} from "@material-ui/core";
 import Head from "next/head";
 import styled from "styled-components";
+import Navbar from "../NavbarComponent";
+import Footer from "./FooterComponent";
+
+
+const PrivacyPolicyHeading = styled.div`
+padding: 3.5rem 0 1.5rem;
+text-align: center;
+span{
+font-family: Poppins,sans-serif;
+font-size: 2rem;
+line-height: 1.3rem;
+word-spacing: 0.3rem;
+}
+`;
 
 const PolicyHeading = styled.div`
 padding: 2rem 0 0rem;
 span{
 font-family: Poppins,sans-serif;
-font-size: 0.8rem;
+font-size: 0.9rem;
 word-spacing: 0.3rem;
 line-height: 1.3rem;
 }
@@ -16,7 +30,7 @@ const PolicyText = styled.div`
 padding: 1rem 0 0rem;
 span{
 font-family: Poppins,sans-serif;
-font-size: 0.8rem;
+font-size: 0.9rem;
 word-spacing: 0.3rem;
 line-height: 1.3rem;
 }
@@ -32,8 +46,9 @@ const Privacy = () => {
             <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet"/>
         </Head>
         </div>
-        <Container>
-
+            <Navbar/>
+            <PrivacyPolicyHeading><span>Privacy Policy</span></PrivacyPolicyHeading>
+            <Container>
             <PolicyHeading>
                 <span>
                     SECTION 1 - WHAT DO WE DO WITH YOUR INFORMATION?
@@ -49,8 +64,8 @@ const Privacy = () => {
             <PolicyText><span>When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only. If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.</span></PolicyText>
 
             <PolicyHeading><span>How do I withdraw my consent?</span></PolicyHeading>
-            <PolicyText><span>If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at scrollhub@gmail.com</span></PolicyText>
-    <PolicyHeading><span>ECTION 3 - DISCLOSURE</span>S</PolicyHeading>
+            <PolicyText><span>If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at contact@xoxoprotection.com</span></PolicyText>
+    <PolicyHeading><span>SECTION 3 - DISCLOSURE</span>S</PolicyHeading>
             <PolicyText><span>SWe may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</span>S</PolicyText>
             <PolicyHeading><span>SSECTION 4 - SHOPIFY</span></PolicyHeading>
             <PolicyText><span>SOur store is hosted on Shopify Inc. They provide us with the online e-commerce platform that allows us to sell our products and services to you. Your data is stored through Shopify’s data storage, databases and the general Shopify application. They store your data on a secure server behind a firewall.</span></PolicyText>
@@ -118,6 +133,7 @@ const Privacy = () => {
             <PolicyText><span>If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.
 </span></PolicyText>
         </Container>
+        <Footer/>
         </div>
     );
 };
