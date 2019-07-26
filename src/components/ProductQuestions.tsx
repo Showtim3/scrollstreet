@@ -18,7 +18,11 @@ interface IProductQuestionsState {
 }
 
 
-class ProductQuestions extends React.Component <any, IProductQuestionsState> {
+interface IProductQuestionProps {
+    range: any
+}
+
+class ProductQuestions extends React.Component <IProductQuestionProps, IProductQuestionsState> {
 
     constructor(props) {
         super(props);
@@ -54,20 +58,26 @@ class ProductQuestions extends React.Component <any, IProductQuestionsState> {
         }
     }
 
-    handleClick = (question: IQuestion, optionKey: number) => {
-        console.log(question, optionKey);
-        question.selected.key = optionKey;
-        this.setState({});
+    handleClick = (index: number, optionKey: number) => {
+        console.log(index, optionKey);
+        const newQuestions = this.state.questionArray;
+        newQuestions[index].selected.key = optionKey;
+        this.setState({
+            questionArray: newQuestions
+        }, () => {
+            index < 2 && this.props.range(this.state.questionArray[0].options[this.state.questionArray[0].selected.key].label,
+                this.state.questionArray[1].options[this.state.questionArray[1].selected.key].label);
+        });
     };
 
-    questionComponent = (question) =>
+    questionComponent = (question: IQuestion, index: number) =>
         <Box pb={3} borderBottom={2}>
             <Box component='h2'>{question.question}</Box>
             <Box display="flex" justifyContent="flex-start" flexWrap="wrap">
                 {question.options.map(option =>
                     <Option>
                         <Chip key={option.key} label={option.label} clickable={true} size="small"
-                              onClick={() => this.handleClick(question, option.key)}
+                              onClick={() => this.handleClick(index, option.key)}
                               style={{backgroundColor: question.selected.key === option.key ? CONSTANTS.primaryGreen : "#e0e0e0"}}
                         />
                     </Option>
@@ -80,8 +90,8 @@ class ProductQuestions extends React.Component <any, IProductQuestionsState> {
         return (
             <div>
                 <Box component='h1'>Answer a few questions</Box>
-                {this.state.questionArray.map(question => {
-                    return this.questionComponent(question)
+                {this.state.questionArray.map((question, index) => {
+                    return this.questionComponent(question, index)
                 })}
             </div>
         );

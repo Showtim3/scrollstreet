@@ -13,7 +13,7 @@ justify-content: center;
 
 const Wrapper = styled.div`
 max-width: 600px;
-margin: 0 auto;
+margin: 1px auto;
 `;
 
 const ListPage = () => {
@@ -25,7 +25,7 @@ const ListPage = () => {
       padding:0;
       font-size:10px;
       font-family:Poppins,sans-serif;
-      }
+      }p
     `}</style>
             <Wrapper>
             <Navbar/>
