@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CONSTANTS from "../../constants/constants";
 
 const ProductDescription = (props) => {
     const ProductTextWrapper = styled.div`
@@ -9,14 +10,23 @@ const ProductDescription = (props) => {
     div{
     display:inline-block;
     }
+
+    ul li:before {
+    position: absolute;
+    content: "\\2713\\0020";
+    padding-right: 1rem;
+    left: 1rem;
+    color: ${CONSTANTS.primaryGreen};
+}
     li{
+    padding: .5rem 0 .5rem 1rem;
     font-family: Poppins,sans-serif;
     word-spacing: 0.3rem;
     line-height: 1.3rem;
     font-size:1rem;
     text-align:left;
-    padding:0.5rem 0;
-    }
+    list-style: none;
+     }
     `;
 
     return (

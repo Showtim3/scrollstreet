@@ -208,7 +208,7 @@ class Product extends React.Component<any, IProductState> {
                 <Announcement> GET A FLAT 15% OFF WHEN YOU PAY ONLINE</Announcement>
                 <Container>
                     <Carousel/>
-                    <ProductName>Rock L Shaped kevlar Unbreakable Super Cable (iPhones/iPads)</ProductName>
+                    <ProductName>Rock L Shaped kevlar Unbreaable Super Cable (iPhones/iPads)</ProductName>
                     <Box display="flex" flexWrap="nowrap" flexDirection="row" mt={0}>
                         <Rating name="size-small" size="small" value={2}/>
                         <Typography component="legend" display="inline">10 reviews</Typography>

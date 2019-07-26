@@ -49,7 +49,7 @@ const ProductCard = () => {
             <ProductCarousel>
                 <img width="100%" src="/static/images/product.webp" alt=""/>
             </ProductCarousel>
-            <ProductName><h2>Rock D Shaped Kevlar Unbreakable Supe Cable (iPhones/iPads)</h2>
+            <ProductName><h2>Rock D Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
             </ProductName>
             <Box display="flex" flexWrap="nowrap" flexDirection="row" mt={0}>
                 <Rating><Star style={{height: '12px', width: '12px', color: "#ffb303"}}/><Star
@@ -62,7 +62,7 @@ const ProductCard = () => {
             </Box>
 
             <Box display="flex" flexWrap="nowrap" mt={1} flexDirection="column">
-                <Box fontWeight="fontWeightBold" fontSize="1rem"
+                <Box fontWeight="fontWeightBold" fontSize="1rem" mb={1}
                      mr={2} style={{textDecoration: "line-through"}}>Rs. 1,399.00
                 </Box>
                 <Box fontWeight="fontWeightBold" fontSize="1rem" color={CONSTANTS.primaryGreen}>Rs.
