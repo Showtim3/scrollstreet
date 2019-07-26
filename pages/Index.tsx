@@ -219,7 +219,6 @@ padding:0;
 .carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
     opacity: 1
 }
-
     `}</style>
             <Navbar/>
             <Product/>
