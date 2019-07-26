@@ -3,17 +3,22 @@ import styled from "styled-components";
 const ProductDescription = (props) => {
     const ProductTextWrapper = styled.div`
     text-align:center;
+    ul{
+    padding-left: 1rem;
+    }
     div{
     display:inline-block;
     }
     li{
-    font-size:1.2rem;
+    font-family: Poppins,sans-serif;
+    word-spacing: 0.3rem;
+    line-height: 1.3rem;
+    font-size:1rem;
     text-align:left;
     padding:0.5rem 0;
     }
     `;
 
-    console.log("props", props);
     return (
         <ProductTextWrapper>
             <div>

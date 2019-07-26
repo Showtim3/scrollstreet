@@ -1,8 +1,8 @@
-import Navbar from "../src/components/NavbarComponent";
-import Product from "../src/components/Product/ProductComponent"
+import Head from "next/head";
 import BuyButton from "../src/components/BuyButton";
-import Head from 'next/head'
-import Footer from "../src/components/FooterComponent";
+import Footer from "../src/components/Footer/FooterComponent";
+import Navbar from "../src/components/NavbarComponent";
+import Product from "../src/components/Product/ProductComponent";
 
 const Index = () => {
     return (
@@ -226,7 +226,7 @@ padding:0;
             <Footer/>
             <BuyButton/>
         </div>
-    )
+    );
 };
 
 export default Index;

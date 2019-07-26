@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BuyButton from "../src/components/BuyButton";
-import Footer from "../src/components/FooterComponent";
+import Footer from "../src/components/Footer/FooterComponent";
 import Navbar from "../src/components/NavbarComponent";
 import ProductCard from "../src/components/Product/ProductCard";
 import Testimonial from "../src/components/Product/TestimonialComponent";
