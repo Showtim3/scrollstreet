@@ -44,10 +44,11 @@ const ProductCard = () => {
             <ProductName><h2>Rock D Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
             </ProductName>
             <Box display="flex" flexWrap="nowrap" flexDirection="row" mt={0}>
-                <Rating name="size-small" size="small"  value={2}/>
+                <Rating name="size-small" size="small" value={2}/>
                 <Typography component="legend" display="inline">10 reviews</Typography>
             </Box>
-            <Box display="flex" flexWrap="nowrap" mt={1} flexDirection="row">
+
+            <Box display="flex" flexWrap="nowrap" mt={1} flexDirection="column">
                 <Box fontWeight="fontWeightBold" fontSize="1rem"
                      mr={2} style={{textDecoration: "line-through"}}>Rs. 1,399.00
                 </Box>

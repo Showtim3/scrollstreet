@@ -59,7 +59,6 @@ class ProductQuestions extends React.Component <IProductQuestionProps, IProductQ
     }
 
     handleClick = (index: number, optionKey: number) => {
-        console.log(index, optionKey);
         const newQuestions = this.state.questionArray;
         newQuestions[index].selected.key = optionKey;
         this.setState({

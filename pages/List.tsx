@@ -28,19 +28,18 @@ const ListPage = () => {
       }p
     `}</style>
             <Wrapper>
-            <Navbar/>
-            <Products>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-            </Products>
-            <Testimonial/>
-            <Footer/>
-            <BuyButton/>
+                <Navbar/>
+                <Products>
+                    <ProductCard/>
+                    <ProductCard/>
+                    <ProductCard/>
+                    <ProductCard/>
+                    <ProductCard/>
+                    <ProductCard/>
+                </Products>
+                <Testimonial/>
+                <Footer/>
+                <BuyButton/>
             </Wrapper>
         </div>
     );

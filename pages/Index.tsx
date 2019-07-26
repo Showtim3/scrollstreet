@@ -5,6 +5,7 @@ import Footer from "../src/components/Footer/FooterComponent";
 import Navbar from "../src/components/NavbarComponent";
 import Product from "../src/components/Product/ProductComponent";
 
+
 const Index = () => {
     return (
         <div>
@@ -22,55 +23,6 @@ const Index = () => {
       font-size:10px;
       font-family:Poppins;
       }
-    .carousel .control-arrow, .carousel.carousel-slider .control-arrow {
-    -webkit-transition: all .25s ease-in;
-    -moz-transition: all .25s ease-in;
-    -ms-transition: all .25s ease-in;
-    -o-transition: all .25s ease-in;
-    transition: all .25s ease-in;
-    opacity: .4;
-    position: absolute;
-    z-index: 2;
-    top: 20px;
-    background: 0 0;
-    border: 0;
-    font-size: 32px;
-    cursor: pointer
-}
-
-.carousel .control-arrow:hover {
-    opacity: 1
-}
-
-.carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
-    margin: 0 5px;
-    display: inline-block;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    content: ''
-}
-
-.carousel .control-disabled.control-arrow {
-    opacity: 0;
-    cursor: inherit;
-    display: none
-}
-
-.carousel .control-prev.control-arrow {
-    left: 0
-}
-
-.carousel .control-prev.control-arrow:before {
-    border-right: 8px solid #fff
-}
-
-.carousel .control-next.control-arrow {
-    right: 0
-}
-
-.carousel .control-next.control-arrow:before {
-    border-left: 8px solid #fff
-}
 
 .carousel {
     position: relative;
@@ -99,17 +51,8 @@ const Index = () => {
     overflow: hidden
 }
 
-.carousel.carousel-slider .control-arrow {
-    top: 0;
-    color: #fff;
-    font-size: 26px;
-    bottom: 0;
-    margin-top: 0;
-    padding: 5px
-}
-
-.carousel.carousel-slider .control-arrow:hover {
-    background: rgba(0, 0, 0, .2)
+.carousel .slider-wrapper {
+    overflow: hidden;
 }
 
 .carousel .slider-wrapper {
@@ -154,6 +97,44 @@ const Index = () => {
 }
 
 .carousel .slider {
+    -webkit-transition: height 0.15s ease-in;
+    -moz-transition: height 0.15s ease-in;
+    -ms-transition: height 0.15s ease-in;
+    -o-transition: height 0.15s ease-in;
+    transition: height 0.15s ease-in;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+    flex-direction: column;
+    flex-flow: column;
+}
+
+.carousel .slider-wrapper.axis-vertical {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.carousel .slider-wrapper.axis-vertical .slider {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.carousel .slider {
     margin: 0;
     padding: 0;
     position: relative;
@@ -167,6 +148,18 @@ const Index = () => {
     -ms-transition: all .35s ease-in-out;
     -o-transition: all .35s ease-in-out;
     transition: all .35s ease-in-out
+}
+
+.carousel .slide {
+    width: 100%;
+}
+
+.carousel .slider.animated {
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
 }
 
 .carousel .slide {

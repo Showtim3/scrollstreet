@@ -30,128 +30,127 @@ const ProductName = styled.div`
                letter-spacing: 1px;
     border-bottom: 3px solid #000;
     margin-bottom: .5rem;
-
-          `;
+ `;
 
 const randomData = {
     "< 1 months": {
         "5 - 10k": {
-            original: 1999,
-            actual: 999
+            original: 4999,
+            actual: 9999
         },
         "10 - 15k": {
-            original: 2999,
-            actual: 1999
+            original: 10999,
+            actual: 14599
         },
         "15 - 20k": {
-            original: 3999,
-            actual: 1999
+            original: 15999,
+            actual: 19999
         },
         "20 - 25k": {
-            original: 1999,
-            actual: 999
+            original: 201999,
+            actual: 24999
         },
         "25 - 35k": {
-            original: 1999,
-            actual: 999
+            original: 251999,
+            actual: 33999
         },
         "35 - 50k": {
-            original: 1999,
-            actual: 999
+            original: 41999,
+            actual: 44999
         },
         "50k+": {
-            original: 1999,
-            actual: 999
+            original: 51999,
+            actual: 55999
         }
     },
     "< 3 months": {
         "5 - 10k": {
-            original: 1999,
-            actual: 999
+            original: 41999,
+            actual: 9999
         },
         "10 - 15k": {
-            original: 2999,
-            actual: 1999
+            original: 10999,
+            actual: 14599
         },
         "15 - 20k": {
-            original: 3999,
-            actual: 1999
+            original: 15999,
+            actual: 19999
         },
         "20 - 25k": {
-            original: 1999,
-            actual: 999
+            original: 201999,
+            actual: 24999
         },
         "25 - 35k": {
-            original: 1999,
-            actual: 999
+            original: 251999,
+            actual: 33999
         },
         "35 - 50k": {
-            original: 1999,
-            actual: 999
+            original: 41999,
+            actual: 44999
         },
         "50k+": {
-            original: 1999,
-            actual: 999
+            original: 51999,
+            actual: 55999
         }
     },
     "< 6 months": {
         "5 - 10k": {
-            original: 1999,
-            actual: 999
+            original: 4999,
+            actual: 9999
         },
         "10 - 15k": {
-            original: 2999,
-            actual: 1999
+            original: 10999,
+            actual: 14599
         },
         "15 - 20k": {
-            original: 3999,
-            actual: 19
+            original: 15999,
+            actual: 19999
         },
         "20 - 25k": {
-            original: 1999,
-            actual: 999
+            original: 201999,
+            actual: 24999
         },
         "25 - 35k": {
-            original: 1999,
-            actual: 999
+            original: 251999,
+            actual: 33999
         },
         "35 - 50k": {
-            original: 1999,
-            actual: 999
+            original: 41999,
+            actual: 44999
         },
         "50k+": {
-            original: 1999,
-            actual: 999
+            original: 51999,
+            actual: 55999
         }
     },
     "< 1 year": {
         "5 - 10k": {
-            original: 1999,
-            actual: 999
+            original: 41999,
+            actual: 9999
         },
         "10 - 15k": {
-            original: 2999,
-            actual: 1999
+            original: 10999,
+            actual: 14599
         },
         "15 - 20k": {
-            original: 3999,
-            actual: 1999
+            original: 15999,
+            actual: 19999
         },
         "20 - 25k": {
-            original: 1999,
-            actual: 999
+            original: 201999,
+            actual: 24999
         },
         "25 - 35k": {
-            original: 1999,
-            actual: 999
+            original: 251999,
+            actual: 33999
         },
         "35 - 50k": {
-            original: 1999,
-            actual: 999
+            original: 39999,
+            actual: 44999
         },
         "50k+": {
-            original: 1999,
-            actual: 999
+            original: 53399,
+            actual: 54999
         }
     }
 };
@@ -167,17 +166,23 @@ const generateDummyData = () => {
 class IProductState {
     product: {
         age: string
-        cost: string
+        cost: {
+            original: number,
+            actual: number
+        }
     }
 }
 
 class Product extends React.Component<any, IProductState> {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             product: {
                 age: "< 6 months",
-                cost: "10 - 15k"
+                cost: {
+                    original: 51999,
+                    actual: 55999
+                }
             }
         }
     }
@@ -185,7 +190,8 @@ class Product extends React.Component<any, IProductState> {
 
     range = (age: string, priceRange: string) => {
         console.log(age, priceRange)
-        const product = {age, cost: priceRange};
+        const product = {age, cost: randomData[age][priceRange]};
+        console.log(age, randomData[age][priceRange]);
         this.setState({
             product: product
         })
@@ -195,6 +201,7 @@ class Product extends React.Component<any, IProductState> {
 
     render() {
 
+        const {product} = this.state;
 
         return (
             <div>
@@ -208,10 +215,10 @@ class Product extends React.Component<any, IProductState> {
                     </Box>
                     <Box display="flex" flexWrap="nowrap" flexDirection="row">
                         <Box fontWeight="fontWeightBold" fontSize="h6.fontSize"
-                             mr={2} style={{textDecoration: "line-through"}}>Rs. 1,399.00
+                             mr={2} style={{textDecoration: "line-through"}}>Rs. {product.cost.actual}
                         </Box>
-                        <Box fontWeight="fontWeightBold" fontSize="h6.fontSize" color={`${CONSTANTS.primaryGreen}`}>Rs.
-                            699.00
+                        <Box fontWeight="fontWeightBold" fontSize="h6.fontSize" color={CONSTANTS.primaryGreen}>Rs.
+                            {product.cost.original}
                         </Box>
                     </Box>
                     <ProductQuestions range={this.range}/>
