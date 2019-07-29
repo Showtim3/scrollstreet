@@ -16,6 +16,7 @@
     "@material-ui/lab": "^4.0.0-alpha.20",
     "firebase": "^6.3.2",
     "fs": "0.0.1-security",
+    "hover.css": "^2.3.2",
     "isomorphic-unfetch": "^3.0.0",
     "net": "^1.0.2",
     "next": "^9.0.1",

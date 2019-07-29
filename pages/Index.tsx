@@ -1,6 +1,5 @@
 import * as firebase from "firebase";
 import Head from "next/head";
-import {useEffect} from "react";
 import BuyButton from "../src/components/BuyButton";
 import Footer from "../src/components/Footer/FooterComponent";
 import Navbar from "../src/components/NavbarComponent";
@@ -14,7 +13,7 @@ if (!firebase.apps.length) {
 const Index = (props) => {
 console.log(props.url.query.utm_src);
 return (
-        <div>
+        <div style={{maxWidth: "600px", margin: "0 auto"}}>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta charSet="utf-8"/>
@@ -227,6 +226,5 @@ padding:0;
         </div>
     );
 };
-
 
 export default Index;
