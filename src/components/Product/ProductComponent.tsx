@@ -32,128 +32,7 @@ const ProductName = styled.div`
     margin-bottom: .5rem;
  `;
 
-const randomData = {
-    "< 1 months": {
-        "5 - 10k": {
-            original: 4999,
-            actual: 9999
-        },
-        "10 - 15k": {
-            original: 10999,
-            actual: 14599
-        },
-        "15 - 20k": {
-            original: 15999,
-            actual: 19999
-        },
-        "20 - 25k": {
-            original: 201999,
-            actual: 24999
-        },
-        "25 - 35k": {
-            original: 251999,
-            actual: 33999
-        },
-        "35 - 50k": {
-            original: 41999,
-            actual: 44999
-        },
-        "50k+": {
-            original: 51999,
-            actual: 55999
-        }
-    },
-    "< 3 months": {
-        "5 - 10k": {
-            original: 41999,
-            actual: 9999
-        },
-        "10 - 15k": {
-            original: 10999,
-            actual: 14599
-        },
-        "15 - 20k": {
-            original: 15999,
-            actual: 19999
-        },
-        "20 - 25k": {
-            original: 201999,
-            actual: 24999
-        },
-        "25 - 35k": {
-            original: 251999,
-            actual: 33999
-        },
-        "35 - 50k": {
-            original: 41999,
-            actual: 44999
-        },
-        "50k+": {
-            original: 51999,
-            actual: 55999
-        }
-    },
-    "< 6 months": {
-        "5 - 10k": {
-            original: 4999,
-            actual: 9999
-        },
-        "10 - 15k": {
-            original: 10999,
-            actual: 14599
-        },
-        "15 - 20k": {
-            original: 15999,
-            actual: 19999
-        },
-        "20 - 25k": {
-            original: 201999,
-            actual: 24999
-        },
-        "25 - 35k": {
-            original: 251999,
-            actual: 33999
-        },
-        "35 - 50k": {
-            original: 41999,
-            actual: 44999
-        },
-        "50k+": {
-            original: 51999,
-            actual: 55999
-        }
-    },
-    "< 1 year": {
-        "5 - 10k": {
-            original: 41999,
-            actual: 9999
-        },
-        "10 - 15k": {
-            original: 10999,
-            actual: 14599
-        },
-        "15 - 20k": {
-            original: 15999,
-            actual: 19999
-        },
-        "20 - 25k": {
-            original: 201999,
-            actual: 24999
-        },
-        "25 - 35k": {
-            original: 251999,
-            actual: 33999
-        },
-        "35 - 50k": {
-            original: 39999,
-            actual: 44999
-        },
-        "50k+": {
-            original: 53399,
-            actual: 54999
-        }
-    }
-};
+const randomData = CONSTANTS.randomData;
 
 const generateDummyData = () => {
     const dataArr = [];
@@ -185,30 +64,40 @@ class Product extends React.Component<any, IProductState> {
                 }
             }
         }
+
     }
+    //
+    // componentWillMount(): void {
+    //     firebase.database().ref('/').child('object')
+    //         .on('value', snapshot => {
+    //             console.log(snapshot.val())
+    //         })
+    //
+    // }
 
 
     range = (age: string, priceRange: string) => {
-        console.log(age, priceRange)
+        console.log(age, priceRange);
         const product = {age, cost: randomData[age][priceRange]};
         console.log(age, randomData[age][priceRange]);
         this.setState({
             product: product
         })
 
-
     };
+
 
     render() {
 
         const {product} = this.state;
+
 
         return (
             <div>
                 <Announcement> GET A FLAT 15% OFF WHEN YOU PAY ONLINE</Announcement>
                 <Container>
                     <Carousel/>
-                    <ProductName>Rock L Shaped kevlar Unbreaable Super Cable (iPhones/iPads)</ProductName>
+                    <ProductName>Rock L Shaped kevlar Unbreable Super Cable (iPhones/iPads)</ProductName>
                     <Box display="flex" flexWrap="nowrap" flexDirection="row" mt={0}>
                         <Rating name="size-small" size="small" value={2}/>
                         <Typography component="legend" display="inline">10 reviews</Typography>
@@ -231,4 +120,19 @@ class Product extends React.Component<any, IProductState> {
     }
 }
 
+
+//
+
+
 export default Product;
+
+// Product.getInitialProps = async function() {
+//     const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
+//     const data = await res.json();
+//
+//     console.log(`Show data fetched. Count: ${data.length}`);
+//
+//     return {
+//         shows: data.map(entry => entry.show)
+//     };
+// };

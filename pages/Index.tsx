@@ -1,12 +1,27 @@
 import Head from "next/head";
-import React from "react";
+import React, {useEffect} from "react";
 import BuyButton from "../src/components/BuyButton";
 import Footer from "../src/components/Footer/FooterComponent";
 import Navbar from "../src/components/NavbarComponent";
 import Product from "../src/components/Product/ProductComponent";
+import firebaseConfig from "../src/services/firebase.tx";
+import * as firebase from "firebase";
 
-
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 const Index = () => {
+    useEffect(() => {
+        const dataBaseRef = firebase.database().ref('/');
+        dataBaseRef.on('value', (snap: firebase.database.DataSnapshot) => {
+            console.log(snap.val())
+        });
+        return () => {
+            dataBaseRef.off()
+        }
+    });
+
+
     return (
         <div>
             <Head>
@@ -221,5 +236,6 @@ padding:0;
         </div>
     );
 };
+
 
 export default Index;
