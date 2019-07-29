@@ -61,7 +61,7 @@ const LoginForm = () => {
                 <FormWrapper>
         <form className={classes.container} noValidate autoComplete="off">
             <TextField
-                id="outlined-name"
+                id="outlined-email"
                 label="Email"
                 className={classes.textField}
                 onChange={handleChange("email")}
@@ -70,7 +70,7 @@ const LoginForm = () => {
                 variant="outlined"
             />
             <TextField
-                id="outlined-name"
+                id="outlined-password"
                 label="Password"
                 className={classes.textField}
                 onChange={handleChange("password")}
