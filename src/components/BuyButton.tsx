@@ -1,6 +1,7 @@
-import {makeStyles, createStyles, Theme} from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import styled, {keyframes} from 'styled-components';
+import Button from "@material-ui/core/Button";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import styled, {keyframes} from "styled-components";
+import CONSTANTS from "../constants/constants";
 
 const rotate = keyframes`
     20%, 100% {
@@ -34,10 +35,11 @@ const BuyButton = () => {
         <div>
             <BuyButtonContainer>
                 <MoveAnimation>
-                    <Button variant="contained" color="primary">Buy Now</Button>
+                    <Button variant="contained" fullWidth={true}
+                            color="primary" style={{backgroundColor: CONSTANTS.colorGreen}}>Buy Now</Button>
                 </MoveAnimation>
             </BuyButtonContainer>
         </div>
-    )
-}
+    );
+};
 export default BuyButton;
