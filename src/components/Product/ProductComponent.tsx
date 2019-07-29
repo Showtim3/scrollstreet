@@ -9,6 +9,7 @@ import Pricing from "./Pricing";
 import ProductDescription from "./ProductDescriptionText";
 import ProductQuestions from '../../components/ProductQuestions'
 import Carousel from "../Carousel";
+import * as firebase from "firebase";
 
 
 const Announcement = styled.div`
@@ -66,25 +67,38 @@ class Product extends React.Component<any, IProductState> {
         }
 
     }
-    //
+
+
     // componentWillMount(): void {
-    //     firebase.database().ref('/').child('object')
-    //         .on('value', snapshot => {
-    //             console.log(snapshot.val())
-    //         })
-    //
+    //     const database = firebase.database();
+    //     const dataBaseRef = database.ref('/1234');
+    //     dataBaseRef.on('value', (snap: firebase.database.DataSnapshot) => {
+    //         console.log(snap.val())
+    //     });
     // }
 
 
     range = (age: string, priceRange: string) => {
         console.log(age, priceRange);
-        const product = {age, cost: randomData[age][priceRange]};
-        console.log(age, randomData[age][priceRange]);
-        this.setState({
-            product: product
-        })
 
-    };
+        let data = {};
+        const database = firebase.database();
+        const dataBaseRef = database.ref('/1234');
+
+        dataBaseRef.on('value', async (snap: firebase.database.DataSnapshot) => {
+            data = await snap.val();
+            console.log(data);
+            console.log(randomData)
+            const product = {age, cost: data[age][priceRange]};
+            console.log(age, data[age][priceRange]);
+
+            this.setState({
+                product: product
+            })
+
+        });
+
+         };
 
 
     render() {
@@ -94,10 +108,10 @@ class Product extends React.Component<any, IProductState> {
 
         return (
             <div>
-                <Announcement> GET A FLAT 15% OFF WHEN YOU PAY ONLINE</Announcement>
+                <Announcement> GET A FLAT 1% OFF WHEN YOU PAY ONLINE</Announcement>
                 <Container>
                     <Carousel/>
-                    <ProductName>Rock L Shaped kevlar Unbreable Super Cable (iPhones/iPads)</ProductName>
+                    <ProductName>Rock L Shaped kevlar Unbreakable Super Cable (iPhones/iPads)</ProductName>
                     <Box display="flex" flexWrap="nowrap" flexDirection="row" mt={0}>
                         <Rating name="size-small" size="small" value={2}/>
                         <Typography component="legend" display="inline">10 reviews</Typography>

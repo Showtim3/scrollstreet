@@ -31,19 +31,19 @@ class ProductQuestions extends React.Component <IProductQuestionProps, IProductQ
                 question: "How old is your phone ?",
                 selected: {key: 0},
                 options: [
-                    {key: 0, label: '< 1 months'},
-                    {key: 1, label: '< 3 months'},
-                    {key: 2, label: '< 6 months'},
-                    {key: 3, label: '< 1 year'},
+                    {key: 0, label: '<1 months'},
+                    {key: 1, label: '<3 months'},
+                    {key: 2, label: '<6 months'},
+                    {key: 3, label: '<1 year'},
                 ]
             }, {
                 question: "How much did you buy it for ?",
                 selected: {key: 0},
                 options: [
-                    {key: 0, label: '5 - 10k'},
-                    {key: 1, label: '10 - 15k'},
-                    {key: 2, label: '15 - 20k'},
-                    {key: 3, label: '20 - 25k'},
+                    {key: 0, label: '5-10k'},
+                    {key: 1, label: '10-15k'},
+                    {key: 2, label: '15-20k'},
+                    {key: 3, label: '20-25k'},
                 ]
             }, {
                 question: "Which OS  ?",
