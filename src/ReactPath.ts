@@ -4,6 +4,8 @@ class ReactPath {
     public static POST_PAGE = "/p/[id]";
     public static PRIVACY_POLICY = "/privacy-policy";
     public static RETURN_POLICY = "/return-policy";
+    public static LOGIN = "/login";
+    public static REGISTER = "/register";
 }
 
 export default ReactPath;

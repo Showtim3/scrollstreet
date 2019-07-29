@@ -14,6 +14,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import React from "react";
 
 import CONSTANTS from "../constants/constants";
+import styled from "styled-components";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -86,18 +87,27 @@ const Navbar = () =>  {
         </div>
     );
 
-    const Image = {
-        width: "15rem",
-    };
+    const Image = styled.div`
+display: inline-block;
+    img{
+        left: 50%;
+        position: absolute;
+        transform: TranslateX(-50%);
+        width: 18rem;
+        top:0rem;
+       }
+    `;
+
     return (
             <div className={classes.root}>
-                <AppBar position="static" color="primary" style={{backgroundColor: CONSTANTS.colorGreen}}>
+                <AppBar position="static" color="primary" style={{backgroundColor: CONSTANTS.colorWhite}}>
                     <Toolbar>
                         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu"
-                                    onClick={toggleDrawer("left", true)}>
-                            <MenuIcon/>
+                                    onClick={toggleDrawer("left", true)}
+                                    style={{backgroundColor: CONSTANTS.colorGreen}}>
+                            <MenuIcon />
                         </IconButton>
-                        <img src="/static/images/xoxocoverpic.png" alt="logo of Xoxo" style={Image}/>
+                        <Image><img src="/static/images/xoxocoverpic.png" alt="logo of Xoxo" /></Image>
                     </Toolbar>
                 </AppBar>
                 <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
@@ -106,5 +116,5 @@ const Navbar = () =>  {
 
             </div>
         );
-}
+};
 export default Navbar;
