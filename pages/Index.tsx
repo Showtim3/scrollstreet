@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 import BuyButton from "../src/components/BuyButton";
 import Footer from "../src/components/Footer/FooterComponent";
 import Navbar from "../src/components/NavbarComponent";
@@ -10,17 +10,18 @@ import * as firebase from "firebase";
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
-const Index = () => {
-    useEffect(() => {
-        const dataBaseRef = firebase.database().ref('/');
-        dataBaseRef.on('value', (snap: firebase.database.DataSnapshot) => {
-            console.log(snap.val())
-        });
-        return () => {
-            dataBaseRef.off()
-        }
-    });
 
+const Index = () => {
+    //
+    // useEffect(() => {
+    //     const dataBaseRef = firebase.database().ref('/');
+    //     dataBaseRef.on('value', (snap: firebase.database.DataSnapshot) => {
+    //         console.log(snap.val())
+    //     });
+    //     return () => {
+    //         dataBaseRef.off()
+    //     }
+    // });
 
     return (
         <div>
