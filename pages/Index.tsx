@@ -12,16 +12,6 @@ if (!firebase.apps.length) {
 }
 
 const Index = (props) => {
-    //
-    // useEffect(() => {
-    //     const dataBaseRef = firebase.database().ref('/');
-    //     dataBaseRef.on('value', (snap: firebase.database.DataSnapshot) => {
-    //         console.log(snap.val())
-    //     });
-    //     return () => {
-    //         dataBaseRef.off()
-    //     }
-    // });
 console.log(props.url.query.utm_src);
 return (
         <div>
@@ -237,5 +227,6 @@ padding:0;
         </div>
     );
 };
+
 
 export default Index;

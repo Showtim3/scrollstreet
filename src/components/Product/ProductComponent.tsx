@@ -43,6 +43,31 @@ const generateDummyData = () => {
     return dataArr;
 };
 
+//
+// const options = {
+//     "key": "rzp_test_dD7ZhZ5gTPeleN", // Enter the Key ID generated from the Dashboard
+//     "amount": "29935", // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.
+//     "currency": "INR",
+//     "name": "Acme Corp",
+//     "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
+//     "image": "",
+//     "order_id": "order_9A33XWu170gUtm",//Order ID is generated as Orders API has been implemented
+//     "handler": (response) => {
+//         alert(response.razorpay_payment_id);
+//     },
+//     "prefill": {
+//         "name": "Gaurav Kumar",
+//         "email": "gaurav.kumar@example.com"
+//     },
+//     "notes": {
+//         "address": "note value"
+//     },
+//     "theme": {
+//         "color": "#F37254"
+//     }
+// };
+
+
 class IProductState {
     product: {
         age: string
@@ -65,18 +90,7 @@ class Product extends React.Component<any, IProductState> {
                 }
             }
         }
-
     }
-
-
-    // componentWillMount(): void {
-    //     const database = firebase.database();
-    //     const dataBaseRef = database.ref('/1234');
-    //     dataBaseRef.on('value', (snap: firebase.database.DataSnapshot) => {
-    //         console.log(snap.val())
-    //     });
-    // }
-
 
     range = (age: string, priceRange: string) => {
         console.log(age, priceRange);
@@ -98,16 +112,40 @@ class Product extends React.Component<any, IProductState> {
 
         });
 
-         };
+    };
+
+    componentDidMount(): void {
+    }
+
+    RazorPayButton = () =>
+        <div>
+            <form method="POST">
+                <script
+                    src="https://checkout.razorpay.com/v1/checkout.js"
+                    data-key="rzp_test_dD7ZhZ5gTPeleN" // Enter the Key ID generated from the Dashboard
+                    data-amount="29935" // Amount is in currency subunits. Default currency is INR
+                    data-currency="INR"
+                    // data-order_id="order_CgmcjRh9ti2lP7"//To be passed when using Orders API.
+                    data-buttontext="Pay with Razorpay"
+                    data-name="Acme Corp"
+                    data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+                    data-image="https://example.com/your_logo.jpg"
+                    // data-prefill.name="Gaurav Kumar"
+                    // data-prefill.email="gaurav.kumar@example.com"
+                    // data-theme.color="#F37254"
+                > </script>
+                <input type="hidden" name="hidden"/>
+            </form>
+        </div>
 
 
     render() {
 
         const {product} = this.state;
 
-
         return (
             <div>
+                <this.RazorPayButton/>
                 <Announcement> GET A FLAT 1% OFF WHEN YOU PAY ONLINE</Announcement>
                 <Container>
                     <Carousel/>
@@ -134,19 +172,4 @@ class Product extends React.Component<any, IProductState> {
     }
 }
 
-
-//
-
-
 export default Product;
-
-// Product.getInitialProps = async function() {
-//     const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-//     const data = await res.json();
-//
-//     console.log(`Show data fetched. Count: ${data.length}`);
-//
-//     return {
-//         shows: data.map(entry => entry.show)
-//     };
-// };
