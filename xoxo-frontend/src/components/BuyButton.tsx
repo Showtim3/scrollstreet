@@ -33,7 +33,7 @@ const rotate = keyframes`
 const BuyButtonContainer = styled.div`
    max-width: 500px;
    position: fixed;
-   width: 500px ;
+   width: 500px;
    bottom: 0.8rem;
    left: 50%;
    transform: translateX(-50%);
@@ -47,7 +47,7 @@ vertical-align: middle;
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  animation-duration: 5s;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;

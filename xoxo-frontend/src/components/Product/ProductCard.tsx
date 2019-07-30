@@ -47,7 +47,7 @@ const ProductCard = () => {
     return (
         <ProductWrapper>
             <ProductCarousel>
-                <img width="100%" src="/static/images/product.webp" alt=""/>
+                <img width="100%" src="/xoxo-frontend/staticrontend/static/images/product.webp" alt=""/>
             </ProductCarousel>
             <ProductName><h2>Rock D Shaped Kevlar Unbreakable Super Cable (iPhones/iPads)</h2>
             </ProductName>

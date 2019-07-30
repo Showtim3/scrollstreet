@@ -135,7 +135,7 @@ class Footer extends React.Component {
                     </FooterList>
                     <CopyrightContainer>
                         <span>&copy;2019 Copyright XoXo Protection </span>
-                        <img src="/static/images/payment.png" alt=""/>
+                        <img src="/xoxo-frontend/staticrontend/static/images/payment.png" alt=""/>
                     </CopyrightContainer>
                     <Dialog
                         onClose={this.handleClose}

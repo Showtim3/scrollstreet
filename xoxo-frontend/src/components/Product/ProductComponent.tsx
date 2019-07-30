@@ -1,16 +1,15 @@
 import {Box, Container, Typography} from "@material-ui/core";
 import {Rating} from "@material-ui/lab";
 import * as faker from "faker";
+import * as firebase from "firebase";
 import * as React from "react";
 import styled from "styled-components";
+import ProductQuestions from "../ProductQuestions";
 import CONSTANTS from "../../constants/constants";
+import Carousel from "../Carousel";
 import Review from "../ReviewComponent";
 import Pricing from "./Pricing";
 import ProductDescription from "./ProductDescriptionText";
-import ProductQuestions from '../../components/ProductQuestions'
-import Carousel from "../Carousel";
-import * as firebase from "firebase";
-
 
 const Announcement = styled.div`
         background-color:#08aa00;
@@ -33,7 +32,6 @@ const ProductName = styled.div`
     margin-bottom: .5rem;
  `;
 
-
 const generateDummyData = () => {
     const dataArr = [];
     for (let i = 0; i <= 10; i++) {
@@ -47,9 +45,9 @@ interface IProductState {
         age: string
         cost: {
             original: number,
-            actual: number
-        }
-    }
+            actual: number,
+        },
+    };
 }
 
 class Product extends React.Component<any, IProductState> {
@@ -79,9 +77,7 @@ class Product extends React.Component<any, IProductState> {
                 product,
             });
         });
-    };
-
-
+    }
 
     public render() {
         const {product} = this.state;

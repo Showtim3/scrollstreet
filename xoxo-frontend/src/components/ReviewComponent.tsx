@@ -47,7 +47,7 @@ const Review = () => {
             <Container>
                 <Heading><span>Top Reviews</span></Heading>
                 <Person>
-                    <div><img src="/static/images/girl.jpg" alt=""/>
+                    <div><img src="/xoxo-frontend/staticrontend/static/images/girl.jpg" alt=""/>
                         <span>Jessica Martin</span>
                     </div>
                 </Person>

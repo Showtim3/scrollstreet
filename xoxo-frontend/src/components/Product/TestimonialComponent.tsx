@@ -32,7 +32,7 @@ return(
     <Container>
         <TestimonialBox>
         <h3>Testimonials</h3>
-        <img src="/static/images/girl.jpg" alt=""/>
+        <img src="/xoxo-frontend/staticrontend/static/images/girl.jpg" alt=""/>
             <Description>Shipping on time. Quick response and excellent service. Gift was perfect!</Description>
             <Name>-Jessica Smith</Name>
         </TestimonialBox>

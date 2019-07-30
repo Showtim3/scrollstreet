@@ -80,21 +80,6 @@ const Navbar = () => {
         setState({...state, [side]: open});
     };
 
-    const sidebarClickHandler = (index) => {
-        switch (index) {
-            case 0 :
-                <Link href={ReactPath.HOME_PAGE}/>;
-                break;
-            case 1 :
-                break;
-            case 2 :
-                <Link href={ReactPath.LOGIN}/>;
-                break;
-            case 3 :
-                <Link href={ReactPath.REGISTER}/>;
-                break;
-        }
-    };
     const sideList = (side: DrawerSide) => (
         <div
             className={classes.list}
@@ -151,7 +136,7 @@ img{
                             style={{backgroundColor: CONSTANTS.colorGreen}}>
                     <MenuIcon/>
                 </IconButton>
-                <Image><img src="/static/images/xoxocoverpic.png" alt="logo of Xoxo"/></Image>
+                <Image><img src="/xoxo-frontend/staticrontend/static/images/xoxocoverpic.png" alt="logo of Xoxo"/></Image>
             </Toolbar>
         </AppBar>
         <Drawer open={state.left} onClose={toggleDrawer("left", false)}>

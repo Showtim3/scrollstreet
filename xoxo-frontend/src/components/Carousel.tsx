@@ -11,22 +11,22 @@ class Carousel extends Component {
                            showThumbs={false}
                            showStatus={false}>
                 <div>
-                    <img width="100%" src="/static/images/product.webp" alt=""/>
+                    <img width="100%" src="/xoxo-frontend/staticrontend/static/images/product.webp" alt=""/>
                 </div>
                 <div>
-                    <img width="100%" src="/static/images/product.webp" alt=""/>
+                    <img width="100%" src="/xoxo-frontend/staticrontend/static/images/product.webp" alt=""/>
                 </div>
                 <div>
-                    <img width="100%" src="/static/images/product.webp" alt=""/>
+                    <img width="100%" src="/xoxo-frontend/staticrontend/static/images/product.webp" alt=""/>
                 </div>
                 <div>
-                    <img width="100%" src="/static/images/product.webp" alt=""/>
+                    <img width="100%" src="/xoxo-frontend/staticrontend/static/images/product.webp" alt=""/>
                 </div>
                 <div>
-                    <img width="100%" src="/static/images/product.webp" alt=""/>
+                    <img width="100%" src="/xoxo-frontend/staticrontend/static/images/product.webp" alt=""/>
                 </div>
                 <div>
-                    <img width="100%" src="/static/images/product.webp" alt=""/>
+                    <img width="100%" src="/xoxo-frontend/staticrontend/static/images/product.webp" alt=""/>
                 </div>
 
             </ReactCarousel>

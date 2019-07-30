@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Chip, Container} from "@material-ui/core";
 import styled from 'styled-components';
-import CONSTANTS from '.././constants/constants'
+import CONSTANTS from '../constants/constants'
 
 const Option = styled.div`
     margin:10px 8px;
