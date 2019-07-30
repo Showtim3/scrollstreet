@@ -43,29 +43,29 @@ const generateDummyData = () => {
     return dataArr;
 };
 
-//
-// const options = {
-//     "key": "rzp_test_dD7ZhZ5gTPeleN", // Enter the Key ID generated from the Dashboard
-//     "amount": "29935", // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.
-//     "currency": "INR",
-//     "name": "Acme Corp",
-//     "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
-//     "image": "",
-//     "order_id": "order_9A33XWu170gUtm",//Order ID is generated as Orders API has been implemented
-//     "handler": (response) => {
-//         alert(response.razorpay_payment_id);
-//     },
-//     "prefill": {
-//         "name": "Gaurav Kumar",
-//         "email": "gaurav.kumar@example.com"
-//     },
-//     "notes": {
-//         "address": "note value"
-//     },
-//     "theme": {
-//         "color": "#F37254"
-//     }
-// };
+
+const options = {
+    key: "rzp_test_dD7ZhZ5gTPeleN",
+    amount: "29935",
+    currency: "INR",
+    name: "Acme Corp",
+    description: "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
+    image: "",
+    // "order_id": "order_9A33XWu170gUtm",
+    handler: (response) => {
+        alert(response.razorpay_payment_id);
+    },
+    prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com"
+    },
+    notes: {
+        address: "note value"
+    },
+    theme: {
+        "color": "#F37244"
+    }
+};
 
 
 class IProductState {
@@ -109,34 +109,46 @@ class Product extends React.Component<any, IProductState> {
             this.setState({
                 product: product
             })
-
         });
-
     };
 
-    componentDidMount(): void {
-    }
 
-    RazorPayButton = () =>
-        <div>
-            <form method="POST">
-                <script
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_test_dD7ZhZ5gTPeleN" // Enter the Key ID generated from the Dashboard
-                    data-amount="29935" // Amount is in currency subunits. Default currency is INR
-                    data-currency="INR"
-                    // data-order_id="order_CgmcjRh9ti2lP7"//To be passed when using Orders API.
-                    data-buttontext="Pay with Razorpay"
-                    data-name="Acme Corp"
-                    data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
-                    data-image="https://example.com/your_logo.jpg"
-                    // data-prefill.name="Gaurav Kumar"
-                    // data-prefill.email="gaurav.kumar@example.com"
-                    // data-theme.color="#F37254"
-                > </script>
-                <input type="hidden" name="hidden"/>
-            </form>
-        </div>
+    RazorPayButton = () => {
+
+        if (!process.browser) {
+            return null;
+        }
+
+        const options = {
+            "key": "rzp_test_dD7ZhZ5gTPeleN",
+            "amount": "29935",
+            "currency": "INR",
+            "name": "Acme Corp",
+            "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
+            "image": "https://example.com/your_logo",
+            // "order_id": "order_9A33XWu170gUtm",
+            "handler": function (response) {
+                alert(response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": "Gaurav Kumar",
+                "email": "gaurav.kumar@example.com"
+            },
+            "notes": {
+                "address": "note value"
+            },
+            "theme": {
+                "color": "#F37254"
+            }
+        };
+
+        // @ts-ignore
+        const rzp1 = new Razorpay(options);
+        return (<button id="rzp-button1" onClick={e => {
+            rzp1.open();
+            e.preventDefault();
+        }}>Pay</button>)
+    };
 
 
     render() {

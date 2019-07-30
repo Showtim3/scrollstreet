@@ -11,7 +11,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import * as React from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import ReactPath from "../../ReactPath";
+import ReactPath from "../ReactPath";
 
 const styles = (theme: Theme) =>
     createStyles({
@@ -35,13 +35,13 @@ export interface DialogTitleProps extends WithStyles<typeof styles> {
 }
 
 const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
-    const { children, classes, onClose } = props;
+    const {children, classes, onClose} = props;
     return (
         <MuiDialogTitle disableTypography className={classes.root}>
             <Typography variant="h6">{children}</Typography>
             {onClose ? (
                 <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-                    <CloseIcon />
+                    <CloseIcon/>
                 </IconButton>
             ) : null}
         </MuiDialogTitle>
@@ -109,47 +109,54 @@ class Footer extends React.Component {
     public render() {
         return (
             <div>
-                    <FooterContainer>
-                        <FooterList>
-                            <ul>
-                                <Link href={ReactPath.HOME_PAGE}><li>Home</li></Link>
-                                <Link href={ReactPath.LIST_ITEM}><li>Products</li></Link>
-                                <li onClick={this.handleClickOpen}>Contact Us</li>
-                            </ul>
-                        </FooterList>
-                        <FooterList>
-                            <ul>
-                                <Link href={ReactPath.PRIVACY_POLICY}><li>Privacy Policy</li></Link>
-                                <Link href={ReactPath.RETURN_POLICY}><li>Return Policy</li></Link>
-                            </ul>
-                        </FooterList>
-                        <CopyrightContainer>
-                            <span>&copy;2019 Copyright XoXo Protection </span>
-                            <img src="/static/images/payment.png" alt=""/>
-                        </CopyrightContainer>
-                        <Dialog
-                            onClose={this.handleClose}
-                            aria-labelledby="customized-dialog-title"
-                            open={this.state.open}
-                        >
-                            <DialogTitle id="customized-dialog-title" onClose={this.handleClose}>
-                                Contact us
-                            </DialogTitle>
-                            <DialogContent dividers>
-                                <Typography gutterBottom>
-                                   Email: contact@xoxoprotection.com
-                                </Typography>
-                            </DialogContent>
-                            <DialogActions>
-                                <Button onClick={this.handleClose} color="primary">
-                                    Close
-                                </Button>
-                            </DialogActions>
-                        </Dialog>
-
-                    </FooterContainer>
+                <FooterContainer>
+                    <FooterList>
+                        <ul>
+                            <Link href={ReactPath.HOME_PAGE}>
+                                <li>Home</li>
+                            </Link>
+                            <Link href={ReactPath.LIST_ITEM}>
+                                <li>Products</li>
+                            </Link>
+                            <li onClick={this.handleClickOpen}>Contact Us</li>
+                        </ul>
+                    </FooterList>
+                    <FooterList>
+                        <ul>
+                            <Link href={ReactPath.PRIVACY_POLICY}>
+                                <li>Privacy Policy</li>
+                            </Link>
+                            <Link href={ReactPath.RETURN_POLICY}>
+                                <li>Return Policy</li>
+                            </Link>
+                        </ul>
+                    </FooterList>
+                    <CopyrightContainer>
+                        <span>&copy;2019 Copyright XoXo Protection </span>
+                        <img src="/static/images/payment.png" alt=""/>
+                    </CopyrightContainer>
+                    <Dialog
+                        onClose={this.handleClose}
+                        aria-labelledby="customized-dialog-title"
+                        open={this.state.open}
+                    >
+                        <DialogTitle id="customized-dialog-title" onClose={this.handleClose}>
+                            Contact us
+                        </DialogTitle>
+                        <DialogContent dividers>
+                            <Typography gutterBottom>
+                                Email: contact@xoxoprotection.com
+                            </Typography>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={this.handleClose} color="primary">
+                                Close
+                            </Button>
+                        </DialogActions>
+                    </Dialog>
+                </FooterContainer>
             </div>
-    );
+        );
     }
 }
 

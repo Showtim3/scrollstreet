@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import BuyButton from "../src/components/BuyButton";
-import Footer from "../src/components/Footer/FooterComponent";
+import Footer from "../src/components/Footer";
 import Navbar from "../src/components/NavbarComponent";
 import ProductCard from "../src/components/Product/ProductCard";
 import Testimonial from "../src/components/Product/TestimonialComponent";
+import Layout from "../src/layouts/Layout";
 
 const Products = styled.div`
 display:flex;
@@ -17,8 +18,9 @@ margin: 1px auto;
 `;
 
 const ListPage = () => {
+    console.log("list");
     return (
-        <div>
+        <Layout>
             <style jsx global>{`
       body {
       margin:0;
@@ -28,7 +30,6 @@ const ListPage = () => {
       }p
     `}</style>
             <Wrapper>
-                <Navbar/>
                 <Products>
                     <ProductCard/>
                     <ProductCard/>
@@ -38,10 +39,9 @@ const ListPage = () => {
                     <ProductCard/>
                 </Products>
                 <Testimonial/>
-                <Footer/>
                 <BuyButton/>
             </Wrapper>
-        </div>
+        </Layout>
     );
 };
 

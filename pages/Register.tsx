@@ -1,14 +1,11 @@
-import Footer from "../src/components/Footer/FooterComponent";
 import RegisterForm from "../src/components/Forms/ResigterFormComponent";
-import Navbar from "../src/components/NavbarComponent";
+import Layout from "../src/layouts/Layout";
 
 const Register = () => {
-    return(
-        <div>
-            <Navbar/>
+    return (
+        <Layout>
             <RegisterForm/>
-            <Footer/>
-        </div>
+        </Layout>
     );
 };
 export default Register;
