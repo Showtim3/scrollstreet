@@ -87,7 +87,6 @@ class Product extends React.Component<any, IProductState> {
         const {product} = this.state;
         return (
             <div>
-                <this.RazorPayButton/>
                 <Announcement> GET A FLAT 1% OFF WHEN YOU PAY ONLINE</Announcement>
                 <Container>
                     <Carousel/>
