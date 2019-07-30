@@ -1,7 +1,5 @@
 import {Container} from "@material-ui/core";
 import styled from "styled-components";
-import Navbar from "../src/components/NavbarComponent";
-import Footer from "../src/components/Footer";
 import Layout from "../src/layouts/Layout";
 
 const ReturnPolicyHeading = styled.div`
@@ -16,7 +14,7 @@ word-spacing: 0.3rem;
 `;
 
 const ReturnPolicyText = styled.div`
-padding: 1rem 0 0rem;
+padding: 1rem 0 0;
 span{
 font-family: Poppins,sans-serif;
 font-size: 0.9rem;
@@ -61,7 +59,6 @@ const ReturnPolicy = () => {
                 </ReturnPolicyText>
                 <ReturnPolicyText><span>Any returned item received by us that does not meet the above-mentioned conditions will not be accepted, and will be returned to the customer at their expense. No amount will be reimbursed, nor will the item be exchanged in such a case.</span></ReturnPolicyText>
             </Container>
-            <Footer/>
         </Layout>
     );
 };

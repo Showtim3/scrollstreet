@@ -1,15 +1,15 @@
+import Head from "next/head";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavbarComponent";
-import Head from 'next/head';
-import "../scss/main.scss"
-
+import "../scss/main.scss";
 
 const layoutStyle = {
-    margin: 0,
+    margin: "0 auto",
+    maxWidth: "600px",
     padding: 0,
 };
 
-const Layout = props => {
+const Layout = (props) => {
     return (
         <div style={layoutStyle}>
             <Head>
@@ -24,7 +24,7 @@ const Layout = props => {
             {props.children}
             <Footer/>
         </div>
-    )
+    );
 };
 
 export default Layout;

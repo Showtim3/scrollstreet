@@ -18,17 +18,8 @@ margin: 1px auto;
 `;
 
 const ListPage = () => {
-    console.log("list");
     return (
         <Layout>
-            <style jsx global>{`
-      body {
-      margin:0;
-      padding:0;
-      font-size:10px;
-      font-family:Poppins,sans-serif;
-      }p
-    `}</style>
             <Wrapper>
                 <Products>
                     <ProductCard/>

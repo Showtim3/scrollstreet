@@ -1,15 +1,12 @@
-import Navbar from "../src/components/NavbarComponent";
-import Footer from "../src/components/Footer";
 import LoginForm from "../src/components/Forms/LoginFormComponent";
+import Layout from "../src/layouts/Layout";
 
 
 const Login = () => {
     return(
-        <div>
-            <Navbar/>
+        <Layout>
             <LoginForm/>
-            <Footer/>
-        </div>
-    )
+        </Layout>
+    );
 };
 export default Login;

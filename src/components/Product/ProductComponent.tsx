@@ -1,16 +1,15 @@
 import {Box, Container, Typography} from "@material-ui/core";
 import {Rating} from "@material-ui/lab";
 import * as faker from "faker";
+import * as firebase from "firebase";
 import * as React from "react";
 import styled from "styled-components";
+import ProductQuestions from "../../components/ProductQuestions";
 import CONSTANTS from "../../constants/constants";
+import Carousel from "../Carousel";
 import Review from "../ReviewComponent";
 import Pricing from "./Pricing";
 import ProductDescription from "./ProductDescriptionText";
-import ProductQuestions from '../../components/ProductQuestions'
-import Carousel from "../Carousel";
-import * as firebase from "firebase";
-
 
 const Announcement = styled.div`
         background-color:#08aa00;
@@ -33,8 +32,6 @@ const ProductName = styled.div`
     margin-bottom: .5rem;
  `;
 
-const randomData = CONSTANTS.randomData;
-
 const generateDummyData = () => {
     const dataArr = [];
     for (let i = 0; i <= 10; i++) {
@@ -43,39 +40,14 @@ const generateDummyData = () => {
     return dataArr;
 };
 
-
-const options = {
-    key: "rzp_test_dD7ZhZ5gTPeleN",
-    amount: "29935",
-    currency: "INR",
-    name: "Acme Corp",
-    description: "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
-    image: "",
-    // "order_id": "order_9A33XWu170gUtm",
-    handler: (response) => {
-        alert(response.razorpay_payment_id);
-    },
-    prefill: {
-        name: "Gaurav Kumar",
-        email: "gaurav.kumar@example.com"
-    },
-    notes: {
-        address: "note value"
-    },
-    theme: {
-        "color": "#F37244"
-    }
-};
-
-
-class IProductState {
+interface IProductState {
     product: {
         age: string
         cost: {
             original: number,
-            actual: number
-        }
-    }
+            actual: number,
+        },
+    };
 }
 
 class Product extends React.Component<any, IProductState> {
@@ -85,73 +57,37 @@ class Product extends React.Component<any, IProductState> {
             product: {
                 age: "< 6 months",
                 cost: {
+                    actual: 55999,
                     original: 51999,
-                    actual: 55999
-                }
-            }
-        }
+                },
+            },
+        };
     }
 
-    range = (age: string, priceRange: string) => {
-        console.log(age, priceRange);
-
+    public range = (age: string, priceRange: string) => {
         let data = {};
         const database = firebase.database();
-        const dataBaseRef = database.ref('/1234');
+        const dataBaseRef = database.ref("/1234");
 
-        dataBaseRef.on('value', async (snap: firebase.database.DataSnapshot) => {
+        dataBaseRef.on("value", async (snap: firebase.database.DataSnapshot) => {
             data = await snap.val();
-            console.log(data);
-            console.log(randomData)
             const product = {age, cost: data[age][priceRange]};
-            console.log(age, data[age][priceRange]);
 
             this.setState({
-                product: product
-            })
+                product,
+            });
         });
-    };
+    }
 
-
-    RazorPayButton = () => {
+    public RazorPayButton = () => {
 
         if (!process.browser) {
             return null;
         }
 
-        const options = {
-            "key": "rzp_test_dD7ZhZ5gTPeleN",
-            "amount": "29935",
-            "currency": "INR",
-            "name": "Acme Corp",
-            "description": "A Wild Sheep Chase is the third novel by Japanese author  Haruki Murakami",
-            "image": "https://example.com/your_logo",
-            // "order_id": "order_9A33XWu170gUtm",
-            "handler": function (response) {
-                alert(response.razorpay_payment_id);
-            },
-            "prefill": {
-                "name": "Gaurav Kumar",
-                "email": "gaurav.kumar@example.com"
-            },
-            "notes": {
-                "address": "note value"
-            },
-            "theme": {
-                "color": "#F37254"
-            }
-        };
+    }
 
-        // @ts-ignore
-        const rzp1 = new Razorpay(options);
-        return (<button id="rzp-button1" onClick={e => {
-            rzp1.open();
-            e.preventDefault();
-        }}>Pay</button>)
-    };
-
-
-    render() {
+    public render() {
 
         const {product} = this.state;
 

@@ -166,7 +166,7 @@ img{
             <DialogTitle id="alert-dialog-title">{"Contact Us"}</DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    Email: contact@xoxoprotection.com
+                    <a style={{textDecoration:"none"}} href="mailto:someone@example.com">Email: contact@xoxoprotection.com</a>
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

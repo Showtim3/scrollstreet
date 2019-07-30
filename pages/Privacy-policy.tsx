@@ -1,7 +1,5 @@
 import {Container} from "@material-ui/core";
-import Head from "next/head";
 import styled from "styled-components";
-import Navbar from "../src/components/NavbarComponent";
 import Layout from "../src/layouts/Layout";
 
 
@@ -17,7 +15,7 @@ word-spacing: 0.3rem;
 `;
 
 const PolicyHeading = styled.div`
-padding: 2rem 0 0rem;
+padding: 2rem 0 0;
 span{
 font-family: Poppins,sans-serif;
 font-size: 0.9rem;
@@ -27,7 +25,7 @@ line-height: 1.3rem;
 `;
 
 const PolicyText = styled.div`
-padding: 1rem 0 0rem;
+padding: 1rem 0 0;
 span{
 font-family: Poppins,sans-serif;
 font-size: 0.9rem;
@@ -39,13 +37,6 @@ line-height: 1.3rem;
 const Privacy = () => {
     return (
         <Layout>
-            <div><Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <meta charSet="utf-8"/>
-                <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet"/>
-                <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet"/>
-            </Head>
-            </div>
             <PrivacyPolicyHeading><span>Privacy Policy</span></PrivacyPolicyHeading>
             <Container>
                 <PolicyHeading>

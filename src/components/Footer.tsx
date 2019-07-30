@@ -12,6 +12,7 @@ import * as React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import ReactPath from "../ReactPath";
+import DialogContentText from "@material-ui/core/DialogContentText";
 
 const styles = (theme: Theme) =>
     createStyles({
@@ -76,6 +77,7 @@ ul{
 padding:0;
 list-style:none;}
 li{
+cursor: pointer;
 font-size:1.2rem;
 padding: 0.2rem;
 
@@ -145,7 +147,7 @@ class Footer extends React.Component {
                         </DialogTitle>
                         <DialogContent dividers>
                             <Typography gutterBottom>
-                                Email: contact@xoxoprotection.com
+                                <a style={{textDecoration:"none"}} href="mailto:someone@example.com">Email: contact@xoxoprotection.com</a>
                             </Typography>
                         </DialogContent>
                         <DialogActions>
