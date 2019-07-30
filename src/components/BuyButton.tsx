@@ -1,7 +1,7 @@
-import {Container} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import styled, {keyframes} from "styled-components";
 import CONSTANTS from "../constants/constants";
+import * as React from "react";
 
 const rotate = keyframes`
     16.65% {
@@ -52,16 +52,48 @@ vertical-align: middle;
   animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: infinite;
-
 `;
+
+
+const options = {
+    key: "rzp_test_dD7ZhZ5gTPeleN",
+    amount: "29935",
+    currency: "INR",
+    name: "Xoxo protection",
+    description: "Xoxo protecion",
+    image: "../../static/images/xoxopro.png",
+    // "order_id": "order_9A33XWu170gUtm",
+    handler: (response) => {
+        console.log(response);
+    },
+    prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com"
+    },
+    theme: {
+        color: `${CONSTANTS.primaryGreen}`,
+    }
+};
+
+const RazorPay = () => {
+    if (!process.browser) {
+        return null;
+    }
+    // @ts-ignore
+    const rzp1 = new Razorpay(options);
+    return <Button variant="contained" fullWidth={true} color="primary"
+                   style={{backgroundColor: CONSTANTS.colorGreen}}
+                   onClick={() => rzp1.open()}>Buy Now</Button>;
+};
+
+
 const BuyButton = () => {
 
     return (
         <div>
             <BuyButtonContainer>
                 <MoveAnimation>
-                    <Button variant="contained" fullWidth={true}
-                            color="primary" style={{backgroundColor: CONSTANTS.colorGreen}}>Buy Now</Button>
+                    <RazorPay/>
                 </MoveAnimation>
             </BuyButtonContainer>
         </div>
